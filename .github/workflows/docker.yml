@@ -28,6 +28,14 @@ jobs:
       - name: Show the files in the image
         run: docker run --rm "$IMAGE:$GITHUB_SHA" find . \( -name .git -o -name __pycache__ \) -prune -print -o -print
       # TODO (Task 2): log in to the registry, tag the image with the branch name, and push both tags.
+      - name: Log in to the registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Push the image
+        run: |
+          docker tag "$IMAGE:$GITHUB_SHA" "$IMAGE:$GITHUB_REF_NAME"
+          docker push "$IMAGE:$GITHUB_SHA"
+          docker push "$IMAGE:$GITHUB_REF_NAME"
+
 
   # TODO (Task 3): train the model with the new image, once it is pushed.
   # train:
