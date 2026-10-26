@@ -29,6 +29,7 @@ Each image has one or more tags, written after a `:`, e.g. `ghcr.io/<you>/<repos
 ### Task 1: What goes into the image?
 
 1. Push any change, e.g. add a line to this file.
+
 2. Open the new run of the **Docker** workflow, and the `build` job.
 3. Open the step **Show the files in the image**.
 
