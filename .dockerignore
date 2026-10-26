@@ -1,0 +1,5 @@
+# Leave out everything, then add back what the training needs.
+*
+!requirements.txt
+!src/
+**/__pycache__
