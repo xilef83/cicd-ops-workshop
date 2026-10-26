@@ -1,5 +1,9 @@
 import json
 import pathlib
+<<<<<<< HEAD
+=======
+import os #imported
+>>>>>>> 70783f331430afb68fbc9c0c5bfe537b9200b3f7
 
 import joblib
 from sklearn.datasets import load_iris
